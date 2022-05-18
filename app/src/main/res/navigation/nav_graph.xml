@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/wellcome_dest">
+
+    <fragment
+        android:id="@+id/wellcome_dest"
+        android:name="com.amm.navdrawerroommasterdetail.WellcomeFragment"
+        android:label="Wellcome"
+        tools:layout="@layout/fragment_wellcome">
+        <action
+            android:id="@+id/action_wellcome_dest_to_guisosFragment"
+            app:destination="@id/guisos_dest" />
+        <action
+            android:id="@+id/preferencias_dest"
+            app:destination="@id/preferencias_dest" />
+        <action
+            android:id="@+id/action_wellcome_dest_to_guisos_de_dest"
+            app:destination="@id/guisos_de_dest" />
+    </fragment>
+    <fragment
+        android:id="@+id/guisos_dest"
+        android:name="com.amm.navdrawerroommasterdetail.guisos.GuisosFragment"
+        android:label="Guisos"
+        tools:layout="@layout/fragment_guisos" />
+    <fragment
+        android:id="@+id/guisos_de_dest"
+        android:name="com.amm.navdrawerroommasterdetail.guisos.GuisosDeFragment"
+        android:label="Guisos de Carne"
+        tools:layout="@layout/fragment_guisos_de" />
+    <fragment
+        android:id="@+id/preferencias_dest"
+        android:name="com.amm.navdrawerroommasterdetail.preferencias.PreferenciasFragment"
+        android:label="Preferencias"
+        tools:layout="@layout/fragment_preferencias" >
+        <action
+            android:id="@+id/action_preferencias_dest_to_ingredientesFragment"
+            app:destination="@id/ingredientesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ingredientesFragment"
+        android:name="com.amm.navdrawerroommasterdetail.preferencias.IngredientesFragment"
+        android:label="Ingredientes"
+        tools:layout="@layout/fragment_ingredientes">
+    </fragment>
+</navigation>

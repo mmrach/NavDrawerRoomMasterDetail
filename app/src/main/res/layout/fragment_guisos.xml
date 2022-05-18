@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.amm.navdrawerroommasterdetail.guisos.GuisosFragment">
+
+    <TextView
+        android:id="@+id/tvGisosDe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Guisos"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibCarnes"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/carnes"
+        app:layout_constraintEnd_toStartOf="@+id/ibPescados"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGisosDe" />
+
+    <ImageButton
+        android:id="@+id/ibPescados"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/pescados"
+        app:layout_constraintEnd_toStartOf="@+id/ibVerduras"
+        app:layout_constraintStart_toEndOf="@+id/ibCarnes"
+        app:layout_constraintTop_toBottomOf="@+id/tvGisosDe" />
+
+    <ImageButton
+        android:id="@+id/ibVerduras"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/verduras"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ibPescados"
+        app:layout_constraintTop_toBottomOf="@+id/tvGisosDe" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvGuisosDe"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ibPescados" />
+</androidx.constraintlayout.widget.ConstraintLayout>
