@@ -148,7 +148,7 @@ public class IngredientesFragment extends Fragment {
         rvIngredienes.setAdapter(ingredientesAdapter);
 
         tvNumIngredientes = (TextView) getView().findViewById(R.id.tvNumIngredientes);
-        ingredientesViewModel.getIngredientes().observe(getViewLifecycleOwner(), new Observer<List<Ingrediente>>() {
+        ingredientesViewModel.ldIngredientes.observe(getViewLifecycleOwner(), new Observer<List<Ingrediente>>() {
             @Override
             public void onChanged(List<Ingrediente> ingredientes) {
                 tvNumIngredientes.setText(String.valueOf(ingredientes.size()));

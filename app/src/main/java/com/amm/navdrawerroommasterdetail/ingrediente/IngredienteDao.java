@@ -31,7 +31,7 @@ public interface IngredienteDao {
     void deleteIngrediente(String ingrediente);
 
     @Query("SELECT * FROM ingredientes ORDER BY ingrediente ASC")
-    LiveData<List<Ingrediente>> getIngredientes();
+    List<Ingrediente> getIngredientes();
 
     @Query("DELETE FROM ingredientes where ingrediente = 'dummy'")
     void dummyDelete();

@@ -57,10 +57,10 @@ public class MainActivity extends AppCompatActivity {
         setupActionBar(navController, appBarConfiguration);
         setupNavigationMenu(navController);
 
-        forceDatabaseCreation();
-
         setupSharedViewModel();
         setupIngredientesViewModel();
+
+        forceDatabaseCreation();
 
         //para quitar la capa de color negro que evita que se vean los colores en el menu
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 Bundle args = new Bundle();
 
                 navController.popBackStack(R.id.wellcome_dest,false);
+
                 if (itemTitle.equals("Guisos de Carne")){
                     args.putInt(ARG_TIPO_GUISO,TiposGuisos.ID_GUISOS_DE_CARNE);
                     navController.navigate(item.getItemId(),args);
@@ -106,8 +107,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void forceDatabaseCreation(){
-        IngredientesRepository ingredientesRepository = new IngredientesRepository(getApplication());
-        ingredientesRepository.forceDBCreation();
+        ingredientesViewModel.foceDBCreation();
     }
 
     private void setupNavigationMenu(NavController navController) {
@@ -127,8 +127,6 @@ public class MainActivity extends AppCompatActivity {
         Set<Integer> topLevelDestinations = new HashSet<>();
         topLevelDestinations.add(R.id.wellcome_dest);
         topLevelDestinations.add(R.id.guisos_dest);
-        topLevelDestinations.add(R.id.guisos_de_dest);
-        topLevelDestinations.add(R.id.guisos_de_dest);
         topLevelDestinations.add(R.id.guisos_de_dest);
 
         if (null != drawerLayout) {
